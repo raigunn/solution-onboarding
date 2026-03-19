@@ -101,7 +101,7 @@ Draft the first pass from the codebase and existing markdown before asking inter
 
 Infer and draft, where possible:
 
-- recommended setup paths already implied by the repo
+- recommended setup approaches already implied by the repo
 - FE vs BE differences
 - Mac vs Windows differences
 - prerequisites and runtime versions
@@ -116,7 +116,7 @@ Do not invent:
 - secret values
 - credential locations that are not known
 - internal access procedures that are not grounded
-- unsupported setup paths
+- unsupported setup approaches
 
 Flag uncertain sections clearly for architect confirmation.
 
@@ -126,11 +126,11 @@ Use the core interview after the first draft exists. Ask only follow-ups when ne
 
 ### Core 11 questions
 
-1. What is the recommended setup path for this solution?
+1. What is the recommended setup approach for this solution? (e.g., Docker, devcontainer, native local services, a setup script, etc.)
 2. Does that differ for FE vs BE developers?
 3. Does that differ for Mac vs Windows?
 4. What access and secrets are required, and how should developers get them?
-5. Which setup paths or instructions in the repo are legacy and should not be recommended?
+5. Which setup approaches or instructions in the repo are legacy and should not be recommended?
 6. What confirms setup is working correctly?
 7. What are the top 3 setup problems developers hit, and the best first fix for each?
 8. When should a developer escalate instead of continuing to troubleshoot?
@@ -140,10 +140,11 @@ Use the core interview after the first draft exists. Ask only follow-ups when ne
 
 ### Interview behavior
 
+- Ask one question at a time. Wait for the solutions architect's response before asking the next question.
 - Ask the first draft-informed version of the questions, not generic questions.
-- Reference specific files or setup paths you found when asking for confirmation.
+- Reference specific files or setup approaches you found when asking for confirmation.
 - Keep the interview tight.
-- Ask follow-ups only where the repo and current answers are ambiguous.
+- Ask follow-ups only where the repo and current answers are ambiguous. Insert them immediately after the question that prompted them, before continuing to the next core question.
 - Use the answers to resolve uncertain sections and legacy-doc handling.
 
 ## Step 5: handle older markdown files explicitly
