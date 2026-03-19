@@ -197,6 +197,9 @@ When updating this initiative:
 
 ## Change Log
 ### 2026-03-19
+- Updated SKILL.md description to improve trigger accuracy: clarified SA-driven bootstrap context, added explicit trigger and do-not-trigger guidance, replaced implementation details with intent-focused language
+
+### 2026-03-19
 - Changed SA interview behavior: questions are now asked one at a time, waiting for the architect's response before proceeding to the next
 - Follow-up questions are now inserted inline immediately after the question that prompted them, not batched at the end
 - Replaced ambiguous "setup path/paths" with "setup approach/approaches" throughout the skill

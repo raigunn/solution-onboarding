@@ -1,6 +1,6 @@
 ---
 name: solution-onboarding-bootstrap
-description: bootstrap repo-native onboarding and troubleshooting guidance for a software solution. use when creating the initial ai-assisted setup system for an existing or new repository. the skill inspects the repo for existing .github/copilot-instructions.md, linked markdown guidance, and informal setup docs — updating them if present, creating them if not — and reconciles everything into a standard structure. this skill creates or reconciles standard setup files, interviews the solutions architect with a focused core question set, and generates an onboarding copilot agent.
+description: bootstrap the initial ai-assisted developer onboarding infrastructure for a solution repository. use when a solutions architect or team lead needs to create or initialize repo-native setup guidance — whether starting from scratch or reconciling informal existing docs. triggers for: setting up an ai onboarding agent in a repo, creating the initial setup/troubleshooting/environment docs, bootstrapping copilot onboarding for a team, or initializing the standard .github/copilot/solution-onboarding structure. the skill autonomously inspects the repo, interviews the solutions architect, and generates the full standard file set and onboarding agent. do not trigger when a developer is getting themselves set up, troubleshooting their own environment, or asking to improve existing copilot instructions without a full bootstrap.
 ---
 
 # Solution Onboarding Bootstrap
