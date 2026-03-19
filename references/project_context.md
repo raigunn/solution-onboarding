@@ -141,8 +141,11 @@ The skill supports:
 ### 14. Standard naming
 Use consistent paths and filenames across project types. Content may vary by stack, but the core structure remains the same.
 
+### 15. Proactive information gathering
+Both the bootstrap skill and the onboarding agent should read files, inspect the repo, and run commands themselves rather than asking the solutions architect or developer to do it.
+
 ## Solutions Architect Interview
-The bootstrap skill runs a core 11-question interview with the solutions architect after the initial repo draft. Questions are asked one at a time, waiting for a response before proceeding. See `SKILL.md` (Step 4) for the authoritative question set and interview behavior rules.
+The bootstrap skill runs a core 12-question interview with the solutions architect after the initial repo draft. Questions are asked one at a time, waiting for a response before proceeding. See `SKILL.md` (Step 4) for the authoritative question set and interview behavior rules.
 
 ## Expected Behavior of the Onboarding Agent
 The onboarding agent should:
@@ -194,6 +197,13 @@ When updating this initiative:
 - Replaced ambiguous "setup path/paths" with "setup approach/approaches" throughout the skill
 - Added working principle: keep `references/project_context.md` up to date whenever changes are made to the skill, templates, or design decisions
 - Removed duplicate interview question list from this file; `SKILL.md` Step 4 is now the single authoritative source
+- Added question 12 to the SA interview: identify external sources of setup documentation (e.g., Confluence, Jira)
+- Added interview behavior rules: ask all 12 questions in order, track completion, do not skip any question
+- Added design decision 15: both the skill and agent should proactively gather information rather than asking the user to run commands
+- Added agent rule: do not flag newer versions of prerequisites as problems; newer versions are acceptable unless an exact version is required
+- Strengthened env variable discovery: both the skill and agent must actively look for required env variables in Docker/devcontainer config, compose files, .env templates, and scripts, and surface missing ones immediately
+- Added rule: explicitly flag scripts or commands that require elevated permissions or admin mode (e.g., PowerShell as Administrator, sudo) at the relevant setup step
+- Added agent startup behavior: automatically run validation prechecks (tools, env variables, elevated permission requirements) as the first step without waiting to be asked
 
 ### 2026-03-16
 - Defined the overall model: bootstrap skill for initial setup, in-repo agent for ongoing use
