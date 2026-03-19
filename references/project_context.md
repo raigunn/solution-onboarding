@@ -1,7 +1,7 @@
 # Project Context
 AI Project Onboarding Initiative
 
-Version: 1.2
+Version: 1.3
 Last Updated: 2026-03-19
 Owner: Daniel DeLay / Velir
 
@@ -149,14 +149,19 @@ The bootstrap skill runs a core 12-question interview with the solutions archite
 
 ## Expected Behavior of the Onboarding Agent
 The onboarding agent should:
+- on startup, automatically run validation prechecks: required tools and runtimes, required environment variables, and any scripts needing elevated permissions — report results before proceeding
 - read `.github/copilot-instructions.md` first
 - follow linked onboarding docs before inventing guidance
 - use the environment matrix for FE/BE and Mac/Windows differences
-- walk developers through setup step by step
+- walk developers through setup step by step using checkpoint-style questions
+- surface missing environment variables immediately, especially those needed by Docker containers or services at startup
+- flag any scripts or commands that require elevated permissions at the relevant step
 - use troubleshooting docs before proposing speculative fixes
 - draft documentation updates when a developer identifies needed changes
 - inspect relevant files and recent commits when asked to update setup docs
 - update `change-log-for-ai.md` when setup-impacting changes are identified in an explicit update workflow
+- never flag newer versions of prerequisites as problems unless an exact version is required
+- see `references/onboarding-agent-template.md` for the full authoritative agent definition
 
 ## Deliverables Created So Far
 - Initial skill package for solution onboarding bootstrap
@@ -204,6 +209,11 @@ When updating this initiative:
 - Strengthened env variable discovery: both the skill and agent must actively look for required env variables in Docker/devcontainer config, compose files, .env templates, and scripts, and surface missing ones immediately
 - Added rule: explicitly flag scripts or commands that require elevated permissions or admin mode (e.g., PowerShell as Administrator, sudo) at the relevant setup step
 - Added agent startup behavior: automatically run validation prechecks (tools, env variables, elevated permission requirements) as the first step without waiting to be asked
+- Removed model: gpt-5 from agent template; model selection is left to the environment
+- Renamed agents/openai.yaml to agents/copilot.yaml for LLM-agnostic naming
+- Updated section-templates.md: "Recommended Setup Paths" → "Recommended Setup Approach"
+- Updated SKILL.md Step 7 to reference the agent template directly instead of maintaining a parallel list
+- Updated project_context.md Expected Behavior section to reflect all current agent behaviors
 
 ### 2026-03-16
 - Defined the overall model: bootstrap skill for initial setup, in-repo agent for ongoing use

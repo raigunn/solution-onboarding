@@ -20,8 +20,8 @@ List required runtimes, tools, accounts, VPN, and machine assumptions.
 ## Access and Secrets
 Describe required access, secrets, and how developers obtain them. Never include secret values.
 
-## Recommended Setup Paths
-Describe the preferred setup path. Split FE vs BE and Mac vs Windows only where needed.
+## Recommended Setup Approach
+Describe the preferred setup approach. Split FE vs BE and Mac vs Windows only where needed.
 
 ## Step-by-Step Setup
 Give a practical sequence.

@@ -5,7 +5,6 @@ Use this template to create `.github/agents/onboarding.agent.md`.
 ```md
 ---
 name: onboarding
-model: gpt-5
 ---
 
 # Onboarding Agent

@@ -185,16 +185,7 @@ Use `references/section-templates.md` for the required structure.
 
 Create `.github/agents/onboarding.agent.md` using `references/onboarding-agent-template.md`.
 
-The onboarding agent must:
-
-- read `.github/copilot-instructions.md` first
-- use linked docs before inventing guidance
-- guide the developer step by step through onboarding
-- use `.github/copilot/solution-onboarding/environment-matrix.md` to handle FE vs BE and Mac vs Windows differences
-- use `.github/copilot/solution-onboarding/troubleshooting.md` before giving ad hoc troubleshooting steps
-- when explicitly asked to update docs, inspect relevant files and recent commits for setup-impacting changes
-- update `.github/copilot/solution-onboarding/change-log-for-ai.md` when setup-impacting changes are documented
-- draft or apply changes according to the requested mode
+Follow the template exactly. Do not add a `model:` field — leave model selection to the environment.
 
 ## Deliverable checklist
 
