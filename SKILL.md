@@ -1,6 +1,6 @@
 ---
 name: solution-onboarding-bootstrap
-description: bootstrap repo-native onboarding and troubleshooting guidance for a software solution. use when creating the initial ai-assisted setup system for an existing or new repository, especially when the repo may already contain .github/copilot-instructions.md, linked markdown guidance, or informal setup docs that need to be reconciled into a standard structure. this skill creates or reconciles standard setup files, interviews the solutions architect with a focused core question set, and optionally generates an onboarding copilot agent.
+description: bootstrap repo-native onboarding and troubleshooting guidance for a software solution. use when creating the initial ai-assisted setup system for an existing or new repository. the skill inspects the repo for existing .github/copilot-instructions.md, linked markdown guidance, and informal setup docs — updating them if present, creating them if not — and reconciles everything into a standard structure. this skill creates or reconciles standard setup files, interviews the solutions architect with a focused core question set, and generates an onboarding copilot agent.
 ---
 
 # Solution Onboarding Bootstrap
@@ -21,6 +21,7 @@ Complete the work in this order:
 
 ## Operating rules
 
+- Be proactive in gathering information. Read files, inspect the repo, and run commands directly rather than asking the solutions architect to do it.
 - Default to preserving useful existing guidance.
 - Never blindly overwrite an existing `.github/copilot-instructions.md`.
 - If `.github/copilot-instructions.md` exists, preserve and augment it.
@@ -59,10 +60,13 @@ Look for:
 - existing `.github/copilot-instructions.md`
 - markdown files linked from it
 - setup or troubleshooting content in `README.md`, `docs/`, `.github/`, `CONTRIBUTING.md`, scripts, devcontainer files, docker files, compose files, lockfiles, runtime version files, CI files, and local env templates
+- environment variable files and templates (`.env`, `.env.example`, `.env.local`, `docker-compose.yml`, devcontainer `remoteEnv`, CI env blocks, and any scripts that reference `$ENV_VAR` or `process.env`)
+- required environment variables, especially those needed by containers or services at startup (e.g., volume mounts, license paths, service URLs, feature flags)
 - FE vs BE setup differences
 - Mac vs Windows differences
 - runtime, package manager, and service dependencies
 - validation or smoke-test clues
+- scripts or commands that require elevated permissions or admin mode (e.g., PowerShell scripts that must be run as Administrator, commands requiring sudo, or installers that require elevated privileges)
 - likely setup blockers and stale guidance
 
 When you find existing markdown guidance, classify it as:
@@ -105,8 +109,10 @@ Infer and draft, where possible:
 - FE vs BE differences
 - Mac vs Windows differences
 - prerequisites and runtime versions
+- required environment variables, including those used by Docker containers, devcontainers, or services at startup — inspect `.env` files, compose files, devcontainer config, and scripts for any variable that must be set before the solution will run
 - local service dependencies
 - setup steps and validation checks
+- scripts or commands that require elevated permissions or admin mode — note these explicitly in setup docs
 - common setup failure points suggested by config or scripts
 - environment matrix rows
 - seed entries for the change log if recent setup-impacting changes are already obvious
@@ -124,7 +130,7 @@ Flag uncertain sections clearly for architect confirmation.
 
 Use the core interview after the first draft exists. Ask only follow-ups when needed.
 
-### Core 11 questions
+### Core 12 questions
 
 1. What is the recommended setup approach for this solution? (e.g., Docker, devcontainer, native local services, a setup script, etc.)
 2. Does that differ for FE vs BE developers?
@@ -137,10 +143,13 @@ Use the core interview after the first draft exists. Ask only follow-ups when ne
 9. For the older markdown files I found, should each be preserved, retired, or absorbed?
 10. What kinds of changes should always be logged in `.github/copilot/solution-onboarding/change-log-for-ai.md`?
 11. Is there anything important about onboarding, setup, troubleshooting, or environment expectations that we have not covered yet?
+12. Can you identify any additional places outside of this repo where setup information is documented? (e.g., Confluence, Jira, internal wikis)
 
 ### Interview behavior
 
 - Ask one question at a time. Wait for the solutions architect's response before asking the next question.
+- Ask all 12 questions in order. Do not skip any question, even if a previous answer seems to partially cover it.
+- Track which questions have been asked and confirm all 12 are completed before ending the interview.
 - Ask the first draft-informed version of the questions, not generic questions.
 - Reference specific files or setup approaches you found when asking for confirmation.
 - Keep the interview tight.
