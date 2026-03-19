@@ -1,8 +1,8 @@
 # Project Context
 AI Project Onboarding Initiative
 
-Version: 1.0  
-Last Updated: 2026-03-16  
+Version: 1.1
+Last Updated: 2026-03-19
 Owner: Daniel DeLay / Velir
 
 ## Purpose
@@ -185,6 +185,7 @@ This initiative may later include:
 
 ## Working Principles for Future AI Updates
 When updating this initiative:
+- keep `references/project_context.md` up to date whenever changes are made to the skill, templates, or design decisions
 - preserve previously agreed design decisions unless explicitly changed
 - prefer consistency of file paths and conventions
 - do not move access/secrets into a separate file unless a new decision overrides that
@@ -199,6 +200,12 @@ When updating this initiative:
 - Whether a dedicated follow-on workflow should exist for post-bootstrap doc governance
 
 ## Change Log
+### 2026-03-19
+- Changed SA interview behavior: questions are now asked one at a time, waiting for the architect's response before proceeding to the next
+- Follow-up questions are now inserted inline immediately after the question that prompted them, not batched at the end
+- Replaced ambiguous "setup path/paths" with "setup approach/approaches" throughout the skill
+- Added working principle: keep `references/project_context.md` up to date whenever changes are made to the skill, templates, or design decisions
+
 ### 2026-03-16
 - Defined the overall model: bootstrap skill for initial setup, in-repo agent for ongoing use
 - Chose preserve-and-augment behavior for existing `.github/copilot-instructions.md`
