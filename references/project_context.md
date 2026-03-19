@@ -1,7 +1,7 @@
 # Project Context
 AI Project Onboarding Initiative
 
-Version: 1.1
+Version: 1.2
 Last Updated: 2026-03-19
 Owner: Daniel DeLay / Velir
 
@@ -142,19 +142,7 @@ The skill supports:
 Use consistent paths and filenames across project types. Content may vary by stack, but the core structure remains the same.
 
 ## Solutions Architect Interview
-The bootstrap skill uses the following core interview questions after repo analysis.
-
-1. What is the recommended setup path for this solution?
-2. Does that differ for FE vs BE developers?
-3. Does that differ for Mac vs Windows?
-4. What access and secrets are required, and how should developers get them?
-5. Which setup paths or instructions in the repo are legacy and should not be recommended?
-6. What confirms setup is working correctly?
-7. What are the top 3 setup problems developers hit, and the best first fix for each?
-8. When should a developer escalate instead of continuing to troubleshoot?
-9. For the older markdown files found, should each be preserved, retired, or absorbed?
-10. What kinds of changes should always be logged in `change-log-for-ai.md`?
-11. Is there anything important about onboarding, setup, troubleshooting, or environment expectations that has not been covered yet?
+The bootstrap skill runs a core 11-question interview with the solutions architect after the initial repo draft. Questions are asked one at a time, waiting for a response before proceeding. See `SKILL.md` (Step 4) for the authoritative question set and interview behavior rules.
 
 ## Expected Behavior of the Onboarding Agent
 The onboarding agent should:
@@ -205,6 +193,7 @@ When updating this initiative:
 - Follow-up questions are now inserted inline immediately after the question that prompted them, not batched at the end
 - Replaced ambiguous "setup path/paths" with "setup approach/approaches" throughout the skill
 - Added working principle: keep `references/project_context.md` up to date whenever changes are made to the skill, templates, or design decisions
+- Removed duplicate interview question list from this file; `SKILL.md` Step 4 is now the single authoritative source
 
 ### 2026-03-16
 - Defined the overall model: bootstrap skill for initial setup, in-repo agent for ongoing use
