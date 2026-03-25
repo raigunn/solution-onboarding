@@ -18,10 +18,8 @@ This initiative moves developer setup and troubleshooting guidance into the solu
 | File | Purpose |
 |------|---------|
 | `SKILL.md` | The bootstrap skill — run this against a target solution repo to set up its onboarding system |
-| `references/project_context.md` | AI continuity doc — design decisions, change log, and working principles for this initiative |
-| `references/section-templates.md` | Enforced section structure for the standard output docs |
-| `references/onboarding-agent-template.md` | Template used to generate the onboarding agent in each target repo |
-| `agents/openai.yaml` | OpenAI agent interface descriptor |
+| `project_context.md` | AI continuity doc — design decisions, change log, and working principles for this initiative |
+| `AI_Solution_Onboarding.pptx` | Presentation deck explaining the model and how to get started |
 
 ## Standard Output
 
