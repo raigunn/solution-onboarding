@@ -1,8 +1,8 @@
 # Project Context
 AI Project Onboarding Initiative
 
-Version: 1.3
-Last Updated: 2026-03-19
+Version: 1.4
+Last Updated: 2026-03-25
 Owner: Daniel DeLay / Velir
 
 ## Purpose
@@ -53,11 +53,7 @@ The standard file set for a target solution is:
 - `.github/copilot/solution-onboarding/environment-matrix.md`
 - `.github/copilot/solution-onboarding/change-log-for-ai.md`
 
-Shared references for this initiative are stored under:
-
-- `.github/copilot/references/`
-
-This project context file belongs in that references location as well.
+If shared reference markdown is created for a target repo's onboarding system, place it under `.github/copilot/solution-onboarding/references/`.
 
 ## Directory Structure Convention
 ```text
@@ -66,15 +62,11 @@ This project context file belongs in that references location as well.
 ├─ agents/
 │  └─ onboarding.agent.md
 └─ copilot/
-   ├─ solution-onboarding/
-   │  ├─ setup.md
-   │  ├─ troubleshooting.md
-   │  ├─ environment-matrix.md
-   │  └─ change-log-for-ai.md
-   └─ references/
-      ├─ project_context.md
-      ├─ section-templates.md
-      └─ onboarding-agent-template.md
+   └─ solution-onboarding/
+      ├─ setup.md
+      ├─ troubleshooting.md
+      ├─ environment-matrix.md
+      └─ change-log-for-ai.md
 ```
 
 ## Key Design Decisions
@@ -161,7 +153,7 @@ The onboarding agent should:
 - inspect relevant files and recent commits when asked to update setup docs
 - update `change-log-for-ai.md` when setup-impacting changes are identified in an explicit update workflow
 - never flag newer versions of prerequisites as problems unless an exact version is required
-- see `references/onboarding-agent-template.md` for the full authoritative agent definition
+- see the Onboarding Agent Template section of `SKILL.md` for the full authoritative agent definition
 
 ## Deliverables Created So Far
 - Initial skill package for solution onboarding bootstrap
@@ -181,7 +173,7 @@ This initiative may later include:
 
 ## Working Principles for Future AI Updates
 When updating this initiative:
-- keep `references/project_context.md` up to date whenever changes are made to the skill, templates, or design decisions
+- keep `project_context.md` up to date whenever changes are made to the skill, templates, or design decisions
 - preserve previously agreed design decisions unless explicitly changed
 - prefer consistency of file paths and conventions
 - do not move access/secrets into a separate file unless a new decision overrides that
@@ -196,6 +188,15 @@ When updating this initiative:
 - Whether a dedicated follow-on workflow should exist for post-bootstrap doc governance
 
 ## Change Log
+### 2026-03-25
+- Inlined `section-templates.md` and `onboarding-agent-template.md` directly into `SKILL.md` so the skill is fully self-contained
+- Published skill to `Velir/AIResources` at `Skills/skills/solution-onboarding-bootstrap/SKILL.md`
+- Removed `agents/` folder and `solution-onboarding/references/` folder from the skill repo
+- Moved `project_context.md` to the repo root
+- Fixed all `.github/copilot/references/` path references to `.github/copilot/solution-onboarding/references/`
+- Updated directory structure convention to reflect current standard output (references/ is no longer a standard output folder)
+- Updated README to reflect current repo contents
+
 ### 2026-03-19
 - Updated SKILL.md description to improve trigger accuracy: clarified SA-driven bootstrap context, added explicit trigger and do-not-trigger guidance, replaced implementation details with intent-focused language
 
